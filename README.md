@@ -1,15 +1,15 @@
-# UTCMB: Ultimate Traditional Chinese Medicine Benchmark
+# LLMD: LingLanMiDian
 
-<div align=center><img width = '200' src ="./assets/UTCMB Logo.png"/></div>  
+<!-- <div align=center><img width = '200' src ="./assets/LLMD Logo.png"/></div>   -->
 
 ## Introduction
 
-**UTCMB** is a large-scale, expert-curated benchmark for evaluating large language models (LLMs) in Traditional Chinese Medicine (TCM). It spans five domains (licensing exam, fundamental knowledge, Chinese patent medicine, information extraction, diagnostic–therapeutic reasoning) with **13 subtasks** and **25,624** instances. Each dataset includes a **400-item** *Hard* subset to probe robustness.
+**LLMD** is a large-scale, expert-curated benchmark for evaluating large language models (LLMs) in Traditional Chinese Medicine (TCM). It spans five domains (licensing exam, fundamental knowledge, Chinese patent medicine, information extraction, diagnostic–therapeutic reasoning) with **13 subtasks** and **25,624** instances. Each dataset includes a **400-item** *Hard* subset to probe robustness.
 
 ---
 
 ## Contents
-- [What’s in UTCMB](#whats-in-utcmb)
+- [What’s in LLMD](#whats-in-LLMD)
 - [Data Statistics](#data-statistics)
 - [Evaluation Metrics](#evaluation-metrics)
 - [Download](#download)
@@ -18,27 +18,27 @@
   - [Concise Leaderboard (Overall Averages)](#concise-leaderboard-overall-averages)
   - [Detailed Leaderboard (Per-Task Bests)](#detailed-leaderboard-per-task-bests)
   - [Full Leaderboard (All Model Performance)](#full-leaderboard-all-model-performance)
-- [Cite UTCMB](#cite-utcmb)
+- [Cite LLMD](#cite-LLMD)
 - [Related Benchmarks](#related-benchmarks)
 - [License & Ethics](#license--ethics)
 - [Acknowledgements](#acknowledgements)
 
 ---
 
-## What’s in UTCMB
+## What’s in LLMD
 
 <p align="center">
   <img src="./assets/overview.png" alt="Overview" style="max-width:100%; height:auto;">
 </p>
 
-UTCMB covers five domains with diverse formats (single-choice, multiple-choice, cloze, multi-label lists, dosage vectors) under a **unified metric system**:
+LLMD covers five domains with diverse formats (single-choice, multiple-choice, cloze, multi-label lists, dosage vectors) under a **unified metric system**:
 - single-choice: Accuracy  
 - multi-choice: instance-level Accuracy; option-level Precision/Recall/F1  
 - cloze: **character-level F1**  
 - extraction & multi-label: **list-level** Precision/Recall/F1  
 - dosage: **cosine similarity** (primary), MAE when prescription overlap is adequate  
 
-UTCMB further introduces decision-recognition versions of clinical tasks (single-choice) for clean, reproducible comparisons.
+LLMD further introduces decision-recognition versions of clinical tasks (single-choice) for clean, reproducible comparisons.
 
 ---
 
@@ -77,8 +77,8 @@ Waiting for release.
 
 ## Quick Start
 ```bash
-git clone https://github.com/TCMAI-BJTU/UTCMB
-cd UTCMB
+git clone https://github.com/TCMAI-BJTU/LLMD
+cd LLMD
 pip install -r requirements.txt
 
 # Evaluate a model
@@ -186,14 +186,14 @@ Best model per subtask/metric; values shown as **Full / Hard**.
 | **Overall Average** |  |  | **48.6** / **30.1** | 48.4 / 29.6 | 48.1 / 29.3 | 46.0 / 27.7 | 44.7 / 25.0 | 42.7 / 21.4 | 38.7 / 22.4 | 45.1 / 26.0 | 41.6 / 23.3 | 43.9 / 24.3 | 34.3 / 19.9 |
 ---
 
-## Cite UTCMB
+## Cite LLMD
 
 ```bibtex
-@misc{utcmb2025,
-  title={UTCMB: Ultimate Traditional Chinese Medicine Benchmark},
+@misc{LLMD2025,
+  title={LLMD: Ultimate Traditional Chinese Medicine Benchmark},
   author={Ruihua},
   year={2025},
-  note={https://github.com/TCMAI-BJTU/UTCMB}
+  note={https://github.com/TCMAI-BJTU/LLMD}
 }
 ```
 
