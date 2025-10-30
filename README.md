@@ -49,7 +49,7 @@ LingLan further introduces decision-recognition versions of clinical tasks (sing
 
 
 <p align="center">
-  <img src="./assets/dataset_statistic.png" alt="Dataset statistic" style="max-width:100%; height:auto;">
+  <img src="./assets/dataset_statistic.png" alt="Dataset statistic" style="max-width:70%; height:auto;">
 </p>
 
 - TCM licensing exam: **1,832**  
