@@ -1,6 +1,12 @@
 # LingLanMiDian: Systematic Evaluation of LLMs on TCM Knowledge and Clinical Reasoning
 
-<!-- <div align=center><img width = '200' src ="./assets/LingLan Logo.png"/></div>   -->
+
+<p align="center">
+  <a href="#"><b>Paper</b></a>&nbsp;|&nbsp;
+  <a href="http://tcmnlp.com"><b>Leaderboard</b></a>
+</p>
+
+<div align=center><img width = '200' src ="./assets/LingLan Logo.png"/></div>  
 
 ## Introduction
 
@@ -69,6 +75,7 @@ LingLan further introduces decision-recognition versions of clinical tasks (sing
 ## Download
 
 Waiting for release.
+Huggingface / Modelscope
 
 ---
 
