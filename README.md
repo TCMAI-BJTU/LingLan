@@ -74,7 +74,7 @@ LingLan further introduces decision-recognition versions of clinical tasks (sing
 
 ## Download
 
-data: [LingLan/data](https://github.com/TCMAI-BJTU/LingLan/tree/main/data)
+data: [LingLan/data](https://github.com/TCMAI-BJTU/LingLan/tree/master/data)
 
 ---
 
@@ -82,7 +82,7 @@ data: [LingLan/data](https://github.com/TCMAI-BJTU/LingLan/tree/main/data)
 
 Refer to [simple_evals](https://github.com/openai/simple-evals) for more details.
 
-Evaluation codes: [tcm_evals](https://github.com/TCMAI-BJTU/TCMBenchmark/tree/main/simple_evals/evals/tcm_evals)
+Evaluation codes: [tcm_evals](https://github.com/TCMAI-BJTU/LingLan/tree/master/simple-evals/evals/tcm_evals)
 
 The annotations will not be released until the paper is accepted; therefore, the evaluation code is not currently executable.
 
