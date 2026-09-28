@@ -10,7 +10,7 @@
 
 ## Introduction
 
-**LingLan** is a large-scale, expert-curated benchmark for evaluating large language models (LLMs) in Traditional Chinese Medicine (TCM). It spans five domains (licensing exam, fundamental knowledge, Chinese patent medicine, information extraction, diagnostic–therapeutic reasoning) with **13 subtasks** and **25,624** instances. Each dataset includes a **400-item** *Hard* subset to probe robustness.
+**LingLan** is a large-scale, expert-curated benchmark for evaluating large language models (LLMs) in Traditional Chinese Medicine (TCM). It spans five domains (licensing exam, fundamental knowledge, Chinese patent medicine, information extraction, diagnostic–therapeutic reasoning) with **13 subtasks** and **25,620** instances. Each dataset includes a **400-item** *Hard* subset to probe robustness.
 
 ---
 
@@ -53,13 +53,13 @@ LingLan further introduces decision-recognition versions of clinical tasks (sing
 </p>
 
 - TCM licensing exam: **1,832**  
-- Fundamental TCM knowledge (single/multi-choice, cloze): **5,844**  
+- Fundamental TCM knowledge (single/multi-choice, cloze): **5,840**  
 - Chinese patent medicine (single/multi-choice, cloze): **5,948**  
 - Decision recognition (syndrome / treatment / prescription): **2,000 + 2,000 + 2,000**  
 - Diagnostic–therapeutic reasoning (syndrome / treatment / prescription / dosage): **2,000**  
 - Information extraction — classical: **2,000**  
 - Information extraction — EMR: **2,000**  
-- **Total:** 9 files, **25,624** items (each dataset includes a 400-item *Hard* subset)
+- **Total:** 9 files, **25,620** items (each dataset includes a 400-item *Hard* subset)
 
 ---
 
