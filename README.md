@@ -1,5 +1,5 @@
 <h2 align="center">
-  <img width="520" src="./assets/linglan_logo_horizontal.svg" alt="LingLan logo" /><br />
+  <img width="600" src="./assets/linglan_logo_horizontal.svg" alt="LingLan logo" /><br />
   A Unified Benchmark for Evaluating Large Language Models<br />in Traditional Chinese Medicine
 </h2>
 

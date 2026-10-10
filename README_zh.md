@@ -1,5 +1,5 @@
 <h2 align="center">
-  <img width="520" src="./assets/linglan_logo_horizontal.svg" alt="灵兰标志" /><br />
+  <img width="600" src="./assets/linglan_logo_horizontal.svg" alt="灵兰标志" /><br />
   面向中医领域的大语言模型统一评估基准
 </h2>
 
