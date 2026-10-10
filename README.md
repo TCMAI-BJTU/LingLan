@@ -179,9 +179,7 @@ Overall averages (%) on **Full** and **Hard**, using the baseline score snapshot
 
 ## Data license
 
-The LingLan dataset (inputs and reference labels in `data/fullset/` and `data/hardset/`) is released under the [Creative Commons Attribution 4.0 International license (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). The full license text is available in [data/LICENSE](data/LICENSE).
-
-See [license scope and attribution requirements](data/README.md#data-license).
+The LingLan dataset is released under the [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/). Please credit [LingLan, its authors, and the data source](https://github.com/TCMAI-BJTU/LingLan), and cite the [paper](https://arxiv.org/abs/2602.01779) when using it. When sharing the data, retain the license link and indicate any changes. See [data/LICENSE](data/LICENSE) for the full terms.
 
 
 ---

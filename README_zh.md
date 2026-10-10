@@ -179,9 +179,7 @@ python3 -m simple-evals.simple_evals --model gpt-5 --eval diagnostic_therapeutic
 
 ## 数据许可
 
-LingLan 数据集（`data/fullset/` 和 `data/hardset/` 中的输入数据及标准标签）采用 [知识共享署名 4.0 国际许可（CC BY 4.0）](https://creativecommons.org/licenses/by/4.0/deed.zh-hans)发布。许可全文见 [data/LICENSE](data/LICENSE)。
-
-[许可范围与署名要求](data/README_zh.md#数据许可)。
+LingLan 数据集采用 [知识共享署名 4.0 国际许可](https://creativecommons.org/licenses/by/4.0/deed.zh-hans)。使用时请注明 [LingLan 及其作者和数据来源](https://github.com/TCMAI-BJTU/LingLan)，并引用[相关论文](https://arxiv.org/abs/2602.01779)。分享数据时，请保留许可链接并注明所作修改。许可全文见 [data/LICENSE](data/LICENSE)。
 
 
 ---
