@@ -175,6 +175,6 @@ Results for the paper's **19 models** are listed in the corresponding task direc
 
 The LingLan dataset (inputs and reference labels in `data/fullset/` and `data/hardset/`) is released under the [Creative Commons Attribution 4.0 International license (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). The full license text is available in [LICENSE](LICENSE).
 
-The license permits sharing, adaptation, and commercial use. When sharing the original or modified data, give appropriate credit, provide a license link, and indicate whether changes were made, as required by the license. Attribute the LingLanMiDian dataset and its authors and retain a link to the data source; see the project's citation guidance for the recommended academic citation.
+The license permits sharing, adaptation, and commercial use. When sharing the original or modified data, give appropriate credit, provide a license link, and indicate whether changes were made, as required by the license. Attribute the LingLan dataset and its authors and retain a link to the data source; see the project's citation guidance for the recommended academic citation.
 
 This statement applies to the dataset and does not change the licenses of evaluation code or third-party libraries. It does not grant rights in third-party material that the licensor has no authority to license; the scope of the grant is governed by CC BY 4.0.

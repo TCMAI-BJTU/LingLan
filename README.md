@@ -1,4 +1,4 @@
-# LingLanMiDian: Systematic Evaluation of LLMs on TCM Knowledge and Clinical Reasoning
+# LingLan: A Unified Benchmark for Evaluating Large Language Models in Traditional Chinese Medicine
 
 [中文说明](README_zh.md)
 
@@ -156,8 +156,8 @@ Overall averages (%) on **Full** and **Hard**, using the baseline score snapshot
 ## Cite LingLan
 
 ```bibtex
-@misc{hua2026linglanmidiansystematicevaluationllms,
-      title={LingLanMiDian: Systematic Evaluation of LLMs on TCM Knowledge and Clinical Reasoning},
+@misc{hua2026linglan,
+      title={LingLan: A Unified Benchmark for Evaluating Large Language Models in Traditional Chinese Medicine},
       author={Rui Hua and Yu Wei and Zixin Shu and Kai Chang and Dengying Yan and Jianan Xia and Zeyu Liu and Hui Zhu and Shujie Song and Mingzhong Xiao and Xiaodong Li and Dongmei Jia and Zhuye Gao and Yanyan Meng and Naixuan Zhao and Yu Fu and Haibin Yu and Benman Yu and Yuanyuan Chen and Fei Dong and Zhizhou Meng and Pengcheng Yang and Songxue Zhao and Lijuan Pei and Yunhui Hu and Kan Ding and Jiayuan Duan and Wenmao Yin and Yang Gu and Runshun Zhang and Qiang Zhu and Jian Yu and Jiansheng Li and Baoyan Liu and Wenjia Wang and Xuezhong Zhou},
       year={2026},
       eprint={2602.01779},
