@@ -4,11 +4,17 @@
 </h2>
 
 <p align="center">
-  <a href="https://arxiv.org/abs/2602.01779"><b>论文</b></a>&nbsp; · &nbsp;
-  <a href="https://www.tcmnlp.com/"><b>排行榜</b></a>&nbsp; · &nbsp;
-  <a href="https://huggingface.co/datasets/TCMLLM/LingLan"><b>Hugging Face</b></a>&nbsp; · &nbsp;
-  <a href="https://modelscope.cn/datasets/TCMAIBJTU/LingLan"><b>ModelScope</b></a>&nbsp; · &nbsp;
-  <a href="README.md"><b>English</b></a>
+  <a href="https://arxiv.org/abs/2602.01779"><img src="https://img.shields.io/badge/%E8%AE%BA%E6%96%87-arXiv-B31B1B?style=plastic&amp;logo=arxiv&amp;logoColor=white" alt="论文: arXiv" height="28" /></a>
+  &nbsp;
+  <a href="https://www.tcmnlp.com/"><img src="https://img.shields.io/badge/%E7%BD%91%E7%AB%99-%E6%8E%92%E8%A1%8C%E6%A6%9C-2F9984?style=plastic" alt="网站: 排行榜" height="28" /></a>
+  &nbsp;
+  <a href="https://huggingface.co/datasets/TCMLLM/LingLan"><img src="https://img.shields.io/badge/%E6%95%B0%E6%8D%AE%E9%9B%86-Hugging%20Face-FFD21E?style=plastic&amp;logo=huggingface&amp;logoColor=black" alt="数据集: Hugging Face" height="28" /></a>
+  &nbsp;
+  <a href="https://modelscope.cn/datasets/TCMAIBJTU/LingLan"><img src="https://img.shields.io/badge/%E6%95%B0%E6%8D%AE%E9%9B%86-ModelScope-624AFF?style=plastic" alt="数据集: ModelScope" height="28" /></a>
+</p>
+
+<p align="center">
+  <a href="README.md">English</a>
 </p>
 
 <p align="center">

@@ -4,11 +4,17 @@
 </h2>
 
 <p align="center">
-  <a href="https://arxiv.org/abs/2602.01779"><b>Paper</b></a>&nbsp; · &nbsp;
-  <a href="https://www.tcmnlp.com/"><b>Leaderboard</b></a>&nbsp; · &nbsp;
-  <a href="https://huggingface.co/datasets/TCMLLM/LingLan"><b>Hugging Face</b></a>&nbsp; · &nbsp;
-  <a href="https://modelscope.cn/datasets/TCMAIBJTU/LingLan"><b>ModelScope</b></a>&nbsp; · &nbsp;
-  <a href="README_zh.md"><b>中文说明</b></a>
+  <a href="https://arxiv.org/abs/2602.01779"><img src="https://img.shields.io/badge/Paper-arXiv-B31B1B?style=plastic&amp;logo=arxiv&amp;logoColor=white" alt="Paper: arXiv" height="28" /></a>
+  &nbsp;
+  <a href="https://www.tcmnlp.com/"><img src="https://img.shields.io/badge/Website-Leaderboard-2F9984?style=plastic" alt="Website: Leaderboard" height="28" /></a>
+  &nbsp;
+  <a href="https://huggingface.co/datasets/TCMLLM/LingLan"><img src="https://img.shields.io/badge/Dataset-Hugging%20Face-FFD21E?style=plastic&amp;logo=huggingface&amp;logoColor=black" alt="Dataset: Hugging Face" height="28" /></a>
+  &nbsp;
+  <a href="https://modelscope.cn/datasets/TCMAIBJTU/LingLan"><img src="https://img.shields.io/badge/Dataset-ModelScope-624AFF?style=plastic" alt="Dataset: ModelScope" height="28" /></a>
+</p>
+
+<p align="center">
+  <a href="README_zh.md">中文说明</a>
 </p>
 
 <p align="center">
