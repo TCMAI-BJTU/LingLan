@@ -1,8 +1,7 @@
-<p align="center">
-  <img width="440" src="./assets/linglan_logo_horizontal.svg" alt="LingLan logo" />
-</p>
-
-<h2 align="center">A Unified Benchmark for Evaluating Large Language Models<br />in Traditional Chinese Medicine</h2>
+<h2 align="center">
+  <img width="520" src="./assets/linglan_logo_horizontal.svg" alt="LingLan logo" /><br />
+  A Unified Benchmark for Evaluating Large Language Models<br />in Traditional Chinese Medicine
+</h2>
 
 <p align="center">
   <a href="https://arxiv.org/abs/2602.01779"><b>Paper</b></a>&nbsp;·&nbsp;

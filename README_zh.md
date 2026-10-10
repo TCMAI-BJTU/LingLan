@@ -1,8 +1,7 @@
-<p align="center">
-  <img width="440" src="./assets/linglan_logo_horizontal.svg" alt="灵兰标志" />
-</p>
-
-<h2 align="center">面向中医领域的大语言模型统一评估基准</h2>
+<h2 align="center">
+  <img width="520" src="./assets/linglan_logo_horizontal.svg" alt="灵兰标志" /><br />
+  面向中医领域的大语言模型统一评估基准
+</h2>
 
 <p align="center">
   <a href="https://arxiv.org/abs/2602.01779"><b>论文</b></a>&nbsp;·&nbsp;
