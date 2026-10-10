@@ -1,4 +1,4 @@
-# LingLan 数据集
+# LingLan 中医评测基准数据集
 
 [English](README.md)
 

@@ -1,4 +1,4 @@
-# LingLan Dataset
+# LingLan TCM Benchmark Dataset
 
 [中文说明](README_zh.md)
 
