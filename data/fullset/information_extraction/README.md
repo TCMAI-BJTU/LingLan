@@ -11,7 +11,7 @@ Accuracy, precision, recall, and F1 are percentages; higher is better.
 - `classical_text_entity_extraction`: [实体抽取_古籍.jsonl](实体抽取_古籍.jsonl)
 - `clinical_record_entity_extraction`: [实体抽取_病历.jsonl](实体抽取_病历.jsonl)
 
-## Clinical EMR
+## Clinical records
 
 | Model | Precision | Recall | F1 |
 | --- | ---: | ---: | ---: |

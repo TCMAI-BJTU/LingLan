@@ -1,4 +1,4 @@
-# TCM licensing examination: Full results
+# Traditional Chinese Medicine licensing examination: Full results
 
 [中文说明](README_zh.md) · [Dataset documentation](../../README.md#paper-evaluation-results)
 

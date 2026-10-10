@@ -12,7 +12,7 @@
 
 ## Introduction
 
-**LingLan** is an expert-curated benchmark for evaluating large language models (LLMs) across five domains of Traditional Chinese Medicine (TCM): licensing examination, fundamental knowledge, Chinese patent medicine knowledge, information extraction, and diagnostic and therapeutic decision-making. The last domain includes both diagnostic and therapeutic reasoning (DTR) and single-choice decision recognition (DR).
+**LingLan** is an expert-curated benchmark for evaluating large language models across five domains of Traditional Chinese Medicine: licensing examination, fundamental knowledge, Chinese patent medicine knowledge, information extraction, and diagnostic and therapeutic decision-making. The last domain includes both diagnostic and therapeutic reasoning and single-choice decision recognition.
 
 The release includes Full and Hard evaluation sets with reference labels in the `answer` field. See [Data Statistics](#data-statistics) for counts and the [data documentation](data/README.md) for schemas and file details.
 
@@ -39,13 +39,13 @@ The release includes Full and Hard evaluation sets with reference labels in the 
   <img src="./assets/overview.png" alt="Overview" style="max-width:100%; height:auto;">
 </p>
 
-LingLan evaluates factual knowledge, structured information extraction, and clinical decision-making through single-choice, multiple-choice, fill-in-the-blank, and structured generation tasks. DTR generates syndrome, treatment-method, and prescription outputs from a case; DR presents the corresponding decisions as single-choice questions.
+LingLan evaluates factual knowledge, structured information extraction, and clinical decision-making through single-choice, multiple-choice, fill-in-the-blank, and structured generation tasks. Diagnostic and therapeutic reasoning generates syndrome, treatment-method, and prescription outputs from a case; decision recognition presents the corresponding decisions as single-choice questions.
 
-The six data directories group these tasks by use: the four knowledge/extraction groups and the two clinical task groups, DTR and DR. They implement the five-domain taxonomy described above.
+The six data directories group these tasks by use: the four knowledge/extraction groups and the two clinical task groups, diagnostic and therapeutic reasoning and decision recognition. They implement the five-domain taxonomy described above.
 
-### Independent and joint DTR evaluation
+### Independent and joint diagnostic and therapeutic reasoning evaluation
 
-DTR supports generating syndrome, treatment, or prescription independently, or all three in one call. Join the three files by four-digit case ID for joint generation; the GitHub runner uses this workflow. See [DTR documentation](data/README.md#diagnostic-and-therapeutic-reasoning) for fields, entry-point names, and scoring.
+Diagnostic and therapeutic reasoning supports generating syndrome, treatment, or prescription independently, or all three in one call. Join the three files by four-digit case ID for joint generation; the GitHub runner uses this workflow. See [diagnostic and therapeutic reasoning documentation](data/README.md#diagnostic-and-therapeutic-reasoning) for fields, entry-point names, and scoring.
 
 ---
 
@@ -57,15 +57,15 @@ DTR supports generating syndrome, treatment, or prescription independently, or a
 
 | Task group | Benchmark tasks | Full items | Hard items |
 | --- | ---: | ---: | ---: |
-| TCM licensing examination | 1 | 1,832 | 400 |
-| Fundamental TCM knowledge: single-choice, multiple-choice, fill-in-the-blank | 3 | 5,840 | 1,200 |
+| Traditional Chinese Medicine licensing examination | 1 | 1,832 | 400 |
+| Fundamental Traditional Chinese Medicine knowledge: single-choice, multiple-choice, fill-in-the-blank | 3 | 5,840 | 1,200 |
 | Chinese patent medicine knowledge: single-choice, multiple-choice, fill-in-the-blank | 3 | 5,948 | 1,200 |
 | Information extraction: classical texts and clinical records | 2 | 4,000 | 800 |
 | Decision recognition: syndrome, treatment method, herbal prescription | 3 | 6,000 | 1,200 |
 | Diagnostic and therapeutic reasoning: joint cases | 1 | 2,000 | 400 |
 | **Total** | **13** | **25,620** | **5,200** |
 
-**File-level counts:** each set contains 15 JSONL files. Splitting each DTR case into three label records gives **29,620 JSONL rows in Full** and **6,000 rows in Hard**, without adding clinical cases. Dosages are stored with the prescription labels. The additional character-F1 evaluation mode uses the same DTR cases and does not add a dataset.
+**File-level counts:** each set contains 15 JSONL files. Splitting each diagnostic and therapeutic reasoning case into three label records gives **29,620 JSONL rows in Full** and **6,000 rows in Hard**, without adding clinical cases. Dosages are stored with the prescription labels. The additional character-F1 evaluation mode uses the same diagnostic and therapeutic reasoning cases and does not add a dataset.
 
 **Hard is a subset of Full.** Its records retain the same IDs, inputs, and answers as their Full counterparts; these are overlapping evaluation sets, not disjoint train/test splits.
 
@@ -81,8 +81,8 @@ See the [per-file inventory](data/README.md#files-and-task-names) for detailed c
 | Multiple-choice | Exact-set Accuracy; option-level Precision, Recall, and F1 |
 | Fill-in-the-blank | Character-level F1 |
 | Information extraction | Precision, Recall, and F1 over typed entity mentions, retaining repetitions |
-| DTR syndrome, treatment method, and prescription | Precision, Recall, and F1 under the selected clinical-label matching mode |
-| Prescription dosage | MAE over matched herbs; cosine similarity over aligned dosage vectors, with unmatched herbs assigned zero on the missing side |
+| Syndrome, treatment method, and prescription generation | Precision, Recall, and F1 under the selected clinical-label matching mode |
+| Prescription dosage | Mean absolute error over matched herbs; cosine similarity over aligned dosage vectors, with unmatched herbs assigned zero on the missing side |
 
 Consult the [evaluation implementations](simple-evals/evals/tcm_evals/) for the scoring rules used by this checkout.
 
@@ -103,7 +103,7 @@ cd LingLan
 
 ## Quick Start
 
-Run commands from the repository root. For the bundled TCM entry point, install its dependencies:
+Run commands from the repository root. For the bundled Traditional Chinese Medicine entry point, install its dependencies:
 
 ```bash
 python3 -m pip install openai anthropic pandas numpy jinja2 requests tqdm

@@ -1,4 +1,4 @@
-# LingLan TCM Benchmark Dataset
+# LingLan Traditional Chinese Medicine Benchmark Dataset
 
 [中文说明](README_zh.md)
 
@@ -69,8 +69,8 @@ Hard records are selected from Full. Each Hard record has the same `id`, `task`,
 
 - Full and Hard overlap. Do not concatenate them as independent examples or treat them as disjoint training and test partitions.
 - Hard keeps the original IDs. Its order is not required to match Full, and a Hard row number is not its case ID.
-- Each file contains 400 Hard records. The three DTR component files share the same 400 case IDs.
-- Hard membership for decision recognition is task-specific. Do not assume that its syndrome, treatment-method, and prescription files select the same cases as one another or as DTR-Hard.
+- Each file contains 400 Hard records. The three diagnostic and therapeutic reasoning component files share the same 400 case IDs.
+- Hard membership for decision recognition is task-specific. Do not assume that its syndrome, treatment-method, and prescription files select the same cases as one another or as the Hard subset for diagnostic and therapeutic reasoning.
 
 ## IDs and shared fields
 
@@ -80,7 +80,7 @@ Hard records are selected from Full. Each Hard record has the same `id`, `task`,
 | `task` | string | Exact task identifier from the inventory above |
 | `answer` | string, list, or object | Reference label in the task-specific format below |
 
-Use the complete `id` as the record key. A shared numeric suffix does not link unrelated knowledge, examination, or extraction tasks. Within the six clinical tasks (three DR and three DTR components), matching suffixes identify the corresponding case in Full.
+Use the complete `id` as the record key. A shared numeric suffix does not link unrelated knowledge, examination, or extraction tasks. Within the six clinical tasks (three decision recognition tasks and three diagnostic and therapeutic reasoning components), matching suffixes identify the corresponding case in Full.
 
 ## Input fields and answer formats
 
@@ -116,9 +116,9 @@ See the [information extraction examples](fullset/information_extraction/README.
 - `options`: five letter-prefixed option strings (`A`–`E`).
 - `answer`: one uppercase option letter.
 
-The tasks correspond to the DTR label components:
+The tasks correspond to the diagnostic and therapeutic reasoning label components:
 
-| Decision-recognition task | DTR component task |
+| Decision-recognition task | Diagnostic and therapeutic reasoning component task |
 | --- | --- |
 | `syndrome_single_choice` | `syndrome` |
 | `treatment_method_single_choice` | `treatment_method` |
@@ -151,9 +151,9 @@ The table below describes the GitHub evaluator's raw model-response protocol. Ta
 | Multiple-choice | `答案：B,C,D` or `答案：BCD` |
 | Fill-in-the-blank | `答案：党参,黄芪` with an ASCII comma between items |
 | Information extraction | A JSON object mapping the requested entity types to lists of strings |
-| Joint DTR | A JSON object with string values for `辨证`, `治法`, and `处方`; use `药名: 剂量g` for prescription items |
+| Joint diagnostic and therapeutic reasoning | A JSON object with string values for `辨证`, `治法`, and `处方`; use `药名: 剂量g` for prescription items |
 
-Both DTR evaluation modes read the three component files: `diagnostic_therapeutic_reasoning` and `diagnostic_therapeutic_reasoning_char_f1`. These are evaluation names, distinct from the three per-record `task` values. The other 12 evaluation names match the corresponding `task` values in the inventory.
+Both diagnostic and therapeutic reasoning evaluation modes read the three component files: `diagnostic_therapeutic_reasoning` and `diagnostic_therapeutic_reasoning_char_f1`. These are evaluation names, distinct from the three per-record `task` values. The other 12 evaluation names match the corresponding `task` values in the inventory.
 
 See the [evaluation guide](../simple-evals/README.md) and [entry-point configuration](../simple-evals/config_evals.py) for commands. Record the selected set, evaluation name, and model configuration with your results.
 
@@ -163,8 +163,8 @@ Results for the paper's **19 models** are listed in the corresponding task direc
 
 | Task group | Full results | Hard results |
 | --- | --- | --- |
-| TCM licensing examination | [Full](fullset/tcm_licensing_examination/README.md) | [Hard](hardset/tcm_licensing_examination/README.md) |
-| Fundamental TCM knowledge | [Full](fullset/fundamental_tcm_knowledge/README.md) | [Hard](hardset/fundamental_tcm_knowledge/README.md) |
+| Traditional Chinese Medicine licensing examination | [Full](fullset/tcm_licensing_examination/README.md) | [Hard](hardset/tcm_licensing_examination/README.md) |
+| Fundamental Traditional Chinese Medicine knowledge | [Full](fullset/fundamental_tcm_knowledge/README.md) | [Hard](hardset/fundamental_tcm_knowledge/README.md) |
 | Chinese patent medicine knowledge | [Full](fullset/chinese_patent_medicine_knowledge/README.md) | [Hard](hardset/chinese_patent_medicine_knowledge/README.md) |
 | Information extraction | [Full](fullset/information_extraction/README.md) | [Hard](hardset/information_extraction/README.md) |
 | Decision recognition | [Full](fullset/decision_recognition/README.md) | [Hard](hardset/decision_recognition/README.md) |

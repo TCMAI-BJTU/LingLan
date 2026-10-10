@@ -12,9 +12,9 @@ Accuracy, precision, recall, and F1 are percentages; higher is better.
 - `treatment_method`: [医家治法.jsonl](医家治法.jsonl)
 - `syndrome`: [医家辨证.jsonl](医家辨证.jsonl)
 
-The paper uses joint generation of syndrome, treatment, and prescription; these are not independent-generation results. DTR uses inclusion-based matching; DTR-F1 uses character-F1 matching. Cosine is cosine similarity multiplied by 100 (higher is better); MAE is in grams (lower is better). As noted in the paper, near-zero MAE can reflect failed herb-name alignment rather than perfect dosage prediction.
+The paper uses joint generation of syndrome, treatment, and prescription; these are not independent-generation results. The results below distinguish inclusion-based matching from character-F1 matching. The cosine similarity values are multiplied by 100 (higher is better); mean absolute error is in grams (lower is better). As noted in the paper, near-zero mean absolute error can reflect failed herb-name alignment rather than perfect dosage prediction.
 
-## DTR — Syndrome
+## Syndrome — inclusion-based matching
 
 | Model | Precision | Recall | F1 |
 | --- | ---: | ---: | ---: |
@@ -38,7 +38,7 @@ The paper uses joint generation of syndrome, treatment, and prescription; these 
 | BianCang-7B | 1.5 | 0.9 | 1.1 |
 | BianCang-14B | 1.7 | 1.0 | 1.2 |
 
-## DTR — Treatment
+## Treatment — inclusion-based matching
 
 | Model | Precision | Recall | F1 |
 | --- | ---: | ---: | ---: |
@@ -62,7 +62,7 @@ The paper uses joint generation of syndrome, treatment, and prescription; these 
 | BianCang-7B | 1.3 | 1.0 | 1.1 |
 | BianCang-14B | 1.8 | 1.0 | 1.2 |
 
-## DTR — Prescription
+## Prescription — inclusion-based matching
 
 | Model | Precision | Recall | F1 |
 | --- | ---: | ---: | ---: |
@@ -86,9 +86,9 @@ The paper uses joint generation of syndrome, treatment, and prescription; these 
 | BianCang-7B | 9.8 | 10.1 | 9.1 |
 | BianCang-14B | 5.4 | 5.6 | 5.1 |
 
-## DTR — Dosage
+## Dosage — inclusion-based matching
 
-| Model | MAE | Cosine |
+| Model | Mean absolute error (g) | Cosine similarity × 100 |
 | --- | ---: | ---: |
 | DeepSeek-R1 | 4.0 | 16.2 |
 | DeepSeek-V3.1 | 4.1 | 16.4 |
@@ -110,7 +110,7 @@ The paper uses joint generation of syndrome, treatment, and prescription; these 
 | BianCang-7B | 2.0 | 8.6 |
 | BianCang-14B | 1.3 | 4.9 |
 
-## DTR-F1 — Syndrome
+## Syndrome — character-F1 matching
 
 | Model | Precision | Recall | F1 |
 | --- | ---: | ---: | ---: |
@@ -134,7 +134,7 @@ The paper uses joint generation of syndrome, treatment, and prescription; these 
 | BianCang-7B | 7.8 | 5.2 | 6.0 |
 | BianCang-14B | 8.4 | 4.5 | 5.5 |
 
-## DTR-F1 — Treatment
+## Treatment — character-F1 matching
 
 | Model | Precision | Recall | F1 |
 | --- | ---: | ---: | ---: |
@@ -158,7 +158,7 @@ The paper uses joint generation of syndrome, treatment, and prescription; these 
 | BianCang-7B | 4.6 | 3.6 | 3.8 |
 | BianCang-14B | 7.9 | 4.8 | 5.7 |
 
-## DTR-F1 — Prescription
+## Prescription — character-F1 matching
 
 | Model | Precision | Recall | F1 |
 | --- | ---: | ---: | ---: |
@@ -182,9 +182,9 @@ The paper uses joint generation of syndrome, treatment, and prescription; these 
 | BianCang-7B | 10.8 | 11.7 | 10.5 |
 | BianCang-14B | 14.8 | 15.4 | 14.2 |
 
-## DTR-F1 — Dosage
+## Dosage — character-F1 matching
 
-| Model | MAE | Cosine |
+| Model | Mean absolute error (g) | Cosine similarity × 100 |
 | --- | ---: | ---: |
 | DeepSeek-R1 | 4.0 | 16.5 |
 | DeepSeek-V3.1 | 4.2 | 16.5 |

@@ -1,4 +1,4 @@
-# Fundamental TCM knowledge: Hard results
+# Fundamental Traditional Chinese Medicine knowledge: Hard results
 
 [中文说明](README_zh.md) · [Dataset documentation](../../README.md#paper-evaluation-results)
 
