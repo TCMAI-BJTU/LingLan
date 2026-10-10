@@ -6,7 +6,7 @@
 <p align="center">
   <a href="https://arxiv.org/abs/2602.01779"><b>论文</b></a>&nbsp;·&nbsp;
   <a href="data/README_zh.md"><b>数据集</b></a>&nbsp;·&nbsp;
-  <a href="http://tcmnlp.com"><b>排行榜</b></a>&nbsp;·&nbsp;
+  <a href="https://www.tcmnlp.com/"><b>排行榜</b></a>&nbsp;·&nbsp;
   <a href="README.md"><b>English</b></a>
 </p>
 

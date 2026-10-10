@@ -6,7 +6,7 @@
 <p align="center">
   <a href="https://arxiv.org/abs/2602.01779"><b>Paper</b></a>&nbsp;·&nbsp;
   <a href="data/README.md"><b>Dataset</b></a>&nbsp;·&nbsp;
-  <a href="http://tcmnlp.com"><b>Leaderboard</b></a>&nbsp;·&nbsp;
+  <a href="https://www.tcmnlp.com/"><b>Leaderboard</b></a>&nbsp;·&nbsp;
   <a href="README_zh.md"><b>中文</b></a>
 </p>
 
