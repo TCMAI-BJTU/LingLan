@@ -9,6 +9,8 @@ This directory contains the released LingLan inputs and reference labels in UTF-
 - [Benchmark overview and citation](../README.md)
 - [Evaluation commands and modes](../simple-evals/README.md)
 
+[Directory structure](#directory-structure) · [Files and tasks](#files-and-task-names) · [Answer formats](#input-fields-and-answer-formats) · [Results](#paper-evaluation-results) · [License](#data-license)
+
 ## Directory structure
 
 Both sets use the same directory and file structure:

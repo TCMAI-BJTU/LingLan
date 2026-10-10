@@ -4,10 +4,24 @@
 </h2>
 
 <p align="center">
-  <a href="https://arxiv.org/abs/2602.01779"><b>论文</b></a>&nbsp;·&nbsp;
-  <a href="data/README_zh.md"><b>数据集</b></a>&nbsp;·&nbsp;
-  <a href="https://www.tcmnlp.com/"><b>排行榜</b></a>&nbsp;·&nbsp;
+  <a href="https://arxiv.org/abs/2602.01779"><b>论文</b></a>&nbsp; · &nbsp;
+  <a href="https://www.tcmnlp.com/"><b>排行榜</b></a>&nbsp; · &nbsp;
+  <a href="https://huggingface.co/datasets/TCMLLM/LingLan"><b>Hugging Face</b></a>&nbsp; · &nbsp;
+  <a href="https://modelscope.cn/datasets/TCMAIBJTU/LingLan"><b>ModelScope</b></a>&nbsp; · &nbsp;
   <a href="README.md"><b>English</b></a>
+</p>
+
+<p align="center">
+  <strong>5</strong> 个评估领域&nbsp; · &nbsp;
+  <strong>13</strong> 项基准任务&nbsp; · &nbsp;
+  <strong>25,620</strong> 个 Full 样本&nbsp; · &nbsp;
+  <strong>5,200</strong> 个 Hard 样本
+</p>
+
+<p align="center">
+  <a href="#下载">下载数据</a>&nbsp; · &nbsp;
+  <a href="#快速开始">开始评估</a>&nbsp; · &nbsp;
+  <a href="data/README_zh.md#论文评估结果">查看完整成绩</a>
 </p>
 
 ## 简介
@@ -16,9 +30,9 @@
 
 本版本提供 Full 和 Hard 评估集合，标准标签保存在 `answer` 字段中。样本数量见[数据统计](#数据统计)，字段结构与文件详情见[数据文档](data/README_zh.md)。
 
----
 
-## 目录
+<details>
+<summary><strong>浏览全部章节</strong></summary>
 
 - [什么是灵兰](#什么是灵兰)
 - [数据统计](#数据统计)
@@ -31,7 +45,7 @@
 - [数据许可](#数据许可)
 - [致谢](#致谢)
 
----
+</details>
 
 ## 什么是灵兰
 
@@ -47,7 +61,6 @@ LingLan 通过单选、多选、填空和结构化生成任务，评估事实知
 
 诊疗推理支持单独生成辨证、治法或处方，也支持一次生成三项结果。联合生成时按四位病例编号关联三个文件；现有 GitHub 评估入口采用联合流程。具体字段、入口名称和评分方式见[诊疗推理说明](data/README_zh.md#诊疗推理)。
 
----
 
 ## 数据统计
 
@@ -71,7 +84,6 @@ LingLan 通过单选、多选、填空和结构化生成任务，评估事实知
 
 逐文件数量见[数据清单](data/README_zh.md#文件与任务名称)。
 
----
 
 ## 评估指标
 
@@ -86,7 +98,6 @@ LingLan 通过单选、多选、填空和结构化生成任务，评估事实知
 
 有关当前检出版本所使用的评分规则，请参阅[评估实现](simple-evals/evals/tcm_evals/)。
 
----
 
 ## 下载
 
@@ -99,7 +110,6 @@ git clone https://github.com/TCMAI-BJTU/LingLan.git
 cd LingLan
 ```
 
----
 
 ## 快速开始
 
@@ -123,7 +133,6 @@ python3 -m simple-evals.simple_evals --model gpt-5 --eval diagnostic_therapeutic
 
 评估框架改编自 [OpenAI simple-evals](https://github.com/openai/simple-evals)。
 
----
 
 ## 排行榜
 
@@ -169,20 +178,16 @@ python3 -m simple-evals.simple_evals --model gpt-5 --eval diagnostic_therapeutic
 
 ```
 
----
 
 ## 数据来源
 
 * 数据整理自去标识化的临床病历、古籍、官方考试来源及结构化知识资源。
 
----
 
 ## 数据许可
 
 LingLan 数据集采用 [知识共享署名 4.0 国际许可](https://creativecommons.org/licenses/by/4.0/deed.zh-hans)。使用时请注明 [LingLan 及其作者和数据来源](https://github.com/TCMAI-BJTU/LingLan)，并引用[相关论文](https://arxiv.org/abs/2602.01779)。分享数据时，请保留许可链接并注明所作修改。许可全文见 [data/LICENSE](data/LICENSE)。
 
-
----
 
 ## 致谢
 

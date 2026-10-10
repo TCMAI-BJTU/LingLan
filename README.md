@@ -4,10 +4,24 @@
 </h2>
 
 <p align="center">
-  <a href="https://arxiv.org/abs/2602.01779"><b>Paper</b></a>&nbsp;·&nbsp;
-  <a href="data/README.md"><b>Dataset</b></a>&nbsp;·&nbsp;
-  <a href="https://www.tcmnlp.com/"><b>Leaderboard</b></a>&nbsp;·&nbsp;
-  <a href="README_zh.md"><b>中文</b></a>
+  <a href="https://arxiv.org/abs/2602.01779"><b>Paper</b></a>&nbsp; · &nbsp;
+  <a href="https://www.tcmnlp.com/"><b>Leaderboard</b></a>&nbsp; · &nbsp;
+  <a href="https://huggingface.co/datasets/TCMLLM/LingLan"><b>Hugging Face</b></a>&nbsp; · &nbsp;
+  <a href="https://modelscope.cn/datasets/TCMAIBJTU/LingLan"><b>ModelScope</b></a>&nbsp; · &nbsp;
+  <a href="README_zh.md"><b>中文说明</b></a>
+</p>
+
+<p align="center">
+  <strong>5</strong> evaluation domains&nbsp; · &nbsp;
+  <strong>13</strong> benchmark tasks&nbsp; · &nbsp;
+  <strong>25,620</strong> Full items&nbsp; · &nbsp;
+  <strong>5,200</strong> Hard items
+</p>
+
+<p align="center">
+  <a href="#download">Get the data</a>&nbsp; · &nbsp;
+  <a href="#quick-start">Run an evaluation</a>&nbsp; · &nbsp;
+  <a href="data/README.md#paper-evaluation-results">Explore all results</a>
 </p>
 
 ## Introduction
@@ -16,9 +30,9 @@
 
 The release includes Full and Hard evaluation sets with reference labels in the `answer` field. See [Data Statistics](#data-statistics) for counts and the [data documentation](data/README.md) for schemas and file details.
 
----
 
-## Contents
+<details>
+<summary><strong>Browse all sections</strong></summary>
 
 - [What is LingLan](#what-is-linglan)
 - [Data Statistics](#data-statistics)
@@ -31,7 +45,7 @@ The release includes Full and Hard evaluation sets with reference labels in the 
 - [Data license](#data-license)
 - [Acknowledgements](#acknowledgements)
 
----
+</details>
 
 ## What is LingLan
 
@@ -47,7 +61,6 @@ The six data directories group these tasks by use: the four knowledge/extraction
 
 Diagnostic and therapeutic reasoning supports generating syndrome, treatment, or prescription independently, or all three in one call. Join the three files by four-digit case ID for joint generation; the GitHub runner uses this workflow. See [diagnostic and therapeutic reasoning documentation](data/README.md#diagnostic-and-therapeutic-reasoning) for fields, entry-point names, and scoring.
 
----
 
 ## Data Statistics
 
@@ -71,7 +84,6 @@ Diagnostic and therapeutic reasoning supports generating syndrome, treatment, or
 
 See the [per-file inventory](data/README.md#files-and-task-names) for detailed counts.
 
----
 
 ## Evaluation Metrics
 
@@ -86,7 +98,6 @@ See the [per-file inventory](data/README.md#files-and-task-names) for detailed c
 
 Consult the [evaluation implementations](simple-evals/evals/tcm_evals/) for the scoring rules used by this checkout.
 
----
 
 ## Download
 
@@ -99,7 +110,6 @@ git clone https://github.com/TCMAI-BJTU/LingLan.git
 cd LingLan
 ```
 
----
 
 ## Quick Start
 
@@ -123,7 +133,6 @@ Omit `--examples` to evaluate the whole selected set. `--split` defaults to `ful
 
 The evaluation framework is adapted from [OpenAI simple-evals](https://github.com/openai/simple-evals).
 
----
 
 ## Leaderboards
 
@@ -169,20 +178,16 @@ Overall averages (%) on **Full** and **Hard**, using the baseline score snapshot
 
 ```
 
----
 
 ## Data Sources
 
 * Data are curated from de-identified clinical records, classical texts, official exam sources, and structured knowledge resources.
 
----
 
 ## Data license
 
 The LingLan dataset is released under the [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/). Please credit [LingLan, its authors, and the data source](https://github.com/TCMAI-BJTU/LingLan), and cite the [paper](https://arxiv.org/abs/2602.01779) when using it. When sharing the data, retain the license link and indicate any changes. See [data/LICENSE](data/LICENSE) for the full terms.
 
-
----
 
 ## Acknowledgements
 
