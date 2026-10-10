@@ -1,3 +1,48 @@
+# LingLan TCM evaluations
+
+Run the following commands from the LingLan repository root. The evaluation
+configuration reads the released labels from `data/fullset` or `data/hardset`.
+`--split` defaults to `fullset`; use `--split hardset` for LingLan-Hard.
+
+```bash
+python3 -m simple-evals.simple_evals --eval tcm_licensing_examination --split fullset
+python3 -m simple-evals.simple_evals --eval clinical_record_entity_extraction --split hardset
+python3 -m simple-evals.simple_evals --eval diagnostic_therapeutic_reasoning --split hardset
+```
+
+The entry point accepts the canonical task names listed below. Comma-separated
+names run multiple evaluations; omitting `--eval` runs all listed modes.
+
+| Evaluation name | Released data |
+| --- | --- |
+| `tcm_licensing_examination` | `tcm_licensing_examination/中医考试题.jsonl` |
+| `fundamental_tcm_knowledge_single_choice` | `fundamental_tcm_knowledge/知识图谱知识问答_单选题.jsonl` |
+| `fundamental_tcm_knowledge_multiple_choice` | `fundamental_tcm_knowledge/知识图谱知识问答_多选题.jsonl` |
+| `fundamental_tcm_knowledge_fill_blank` | `fundamental_tcm_knowledge/知识图谱知识问答_填空题.jsonl` |
+| `chinese_patent_medicine_knowledge_single_choice` | `chinese_patent_medicine_knowledge/中成药知识问答_单选题.jsonl` |
+| `chinese_patent_medicine_knowledge_multiple_choice` | `chinese_patent_medicine_knowledge/中成药知识问答_多选题.jsonl` |
+| `chinese_patent_medicine_knowledge_fill_blank` | `chinese_patent_medicine_knowledge/中成药知识问答_填空题.jsonl` |
+| `classical_text_entity_extraction` | `information_extraction/实体抽取_古籍.jsonl` |
+| `clinical_record_entity_extraction` | `information_extraction/实体抽取_病历.jsonl` |
+| `syndrome_single_choice` | `decision_recognition/医家辨证_选择题.jsonl` |
+| `treatment_method_single_choice` | `decision_recognition/医家治法_选择题.jsonl` |
+| `herbal_prescription_single_choice` | `decision_recognition/医家处方_选择题.jsonl` |
+| `diagnostic_therapeutic_reasoning` | Three files in `diagnostic_therapeutic_reasoning` |
+| `diagnostic_therapeutic_reasoning_char_f1` | The same cases, using the existing character F1 matching |
+
+All released labels are read from `answer`. The diagnostic and therapeutic
+reasoning loader joins `syndrome`, `treatment_method`, and `herbal_prescription`
+records by the four-digit suffix of their IDs. It verifies that case IDs, the
+physician, and the medical record agree across the three files. One model call
+per case produces all three results, using the existing prompt and scoring
+functions. Fullset contains 2,000 joint cases; Hardset contains 400.
+
+Reports are saved under `simple-evals/tmp/<split>/<evaluation>/<model>/`.
+The diagnostic and therapeutic reasoning results also retain the three source
+IDs in their example-level metadata.
+
+The upstream reference documentation follows.
+
 # ⚠️ Deprecation Notice
 
 **July 2025**: `simple-evals` will no longer be updated for new models or benchmark results. The repo will continue to host reference implementations for **HealthBench**, **BrowseComp**, and **SimpleQA**.

@@ -132,7 +132,7 @@ class TCPEEval(Eval):
             extracted_answer = extract_tcm_answer(response_text)
 
             # 解析标准答案
-            correct_answer = parse_tcm_answer(row["答案"])
+            correct_answer = parse_tcm_answer(row["answer"])
 
             # 计算分数
             score = 1.0 if extracted_answer == correct_answer else 0.0

@@ -93,14 +93,15 @@ def extract_entities_from_response(response_text: str, entity_types: List[str]) 
 
 def calculate_ner_metrics(pred_entities: Dict[str, List[str]], 
                          gold_entities: Dict[str, List[str]]) -> Tuple[float, float, float]:
-    """计算实体抽取的precision, recall, f1"""
+    """计算实体抽取的precision, recall, f1，忽略实体首尾空白。"""
     
     # 将实体转换为(entity_type, entity)的元组集合，考虑重复
     def entities_to_set(entities_dict):
         entity_set = []
         for entity_type, entities in entities_dict.items():
             for entity in entities:
-                entity_set.append((entity_type, entity))
+                normalized_entity = entity.strip() if isinstance(entity, str) else entity
+                entity_set.append((entity_type, normalized_entity))
         return entity_set
     
     pred_set = entities_to_set(pred_entities)
@@ -160,7 +161,7 @@ class NERAncientEval(Eval):
             pred_entities = extract_entities_from_response(response_text, row["entity_types"])
 
             # 标准答案
-            gold_entities = row["entities"]
+            gold_entities = row["answer"]
 
             # 计算指标
             precision, recall, f1 = calculate_ner_metrics(pred_entities, gold_entities)

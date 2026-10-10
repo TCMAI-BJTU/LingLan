@@ -3,6 +3,7 @@ import os
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from multiprocessing.pool import ThreadPool
+from pathlib import Path
 from typing import Any, Callable
 
 import jinja2
@@ -12,7 +13,7 @@ from tqdm import tqdm
 
 from .types import EvalResult, Message, SamplerBase, SingleEvalResult
 
-ROOT_PATH = "../simple_evals"
+ROOT_PATH = str(Path(__file__).resolve().parent)
 
 QUERY_TEMPLATE_MULTICHOICE = """
 Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCD. Think step by step before answering.

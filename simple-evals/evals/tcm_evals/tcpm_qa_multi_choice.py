@@ -5,10 +5,10 @@ import re
 from ... import common
 from ...common import (
     HTML_JINJA,
-    normalize_extracted_answer,
     normalize_response,
 )
 from ...types import Eval, EvalResult, SamplerBase, SingleEvalResult
+from .multi_choice_utils import parse_multi_choice_answer
 
 # 多选题提示模板
 MULTI_CHOICE_TEMPLATE = """
@@ -98,6 +98,7 @@ class TCPMQAMultiChoiceEval(Eval):
                 if line.strip():
                     data = json.loads(line)
                     if data.get("question_type") == "multiple_choice":
+                        data["answer"] = parse_multi_choice_answer(data["answer"])
                         examples.append(data)
 
         if num_examples:
@@ -122,9 +123,8 @@ class TCPMQAMultiChoiceEval(Eval):
             # 提取模型回答的答案
             extracted_answer = extract_multi_choice_answer(response_text)
 
-            # 标准答案，需要排序以便比较
-            # 固定格式：["BCD"] -> ["B", "C", "D"]
-            correct_answer = sorted(list(row["answer"][0]))
+            # 标准答案已在加载时统一为排序后的逐选项列表
+            correct_answer = row["answer"]
 
             # 计算准确率（完全匹配）
             accuracy = 1.0 if extracted_answer == correct_answer else 0.0

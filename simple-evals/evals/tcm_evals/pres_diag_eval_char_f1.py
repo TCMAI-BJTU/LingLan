@@ -9,6 +9,7 @@ import numpy as np
 from ... import common
 from ...common import PRESCRIPTION_HTML_JINJA
 from ...types import Eval, EvalResult, SamplerBase, SingleEvalResult
+from .diagnostic_therapeutic_data import load_diagnostic_therapeutic_examples
 
 # 中医诊疗全流程提示模板
 MEDICAL_DIAGNOSIS_TEMPLATE = """
@@ -84,7 +85,7 @@ def normalize_herb_name(name: str) -> str:
 
 
 def parse_prescription(prescription_str: str) -> Dict[str, float]:
-    """解析处方字符串，返回药名->剂量的字典"""
+    """解析处方字符串；同名药物重复出现时，保留首次解析结果。"""
     herb_doses = {}
     if not prescription_str:
         return herb_doses
@@ -124,7 +125,7 @@ def parse_prescription(prescription_str: str) -> Dict[str, float]:
                 dose = None
         
         if name:
-            herb_doses[name] = dose
+            herb_doses.setdefault(name, dose)
     
     return herb_doses
 
@@ -452,11 +453,7 @@ class PresDigEvalCharF1(Eval):
 
     def __init__(self, data_path: str, num_examples: int | None = None, 
                  num_threads: int = 1, threshold: float = 0.7):
-        examples = []
-        with open(data_path, 'r', encoding='utf-8') as f:
-            for line in f:
-                if line.strip():
-                    examples.append(json.loads(line))
+        examples = load_diagnostic_therapeutic_examples(data_path)
 
         if num_examples:
             examples = random.Random(0).sample(examples, min(num_examples, len(examples)))
@@ -596,7 +593,11 @@ class PresDigEvalCharF1(Eval):
                     "overall_f1": overall_f1,
                     "char_f1_threshold": self.threshold
                 }, 
-                convo=convo
+                convo=convo,
+                example_level_metadata={
+                    "id": row.get("id"),
+                    "source_ids": row.get("source_ids", {}),
+                },
             )
 
         results = common.map_with_progress(fn, self.examples, num_threads=self.num_threads)

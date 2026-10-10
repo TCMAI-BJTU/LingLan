@@ -8,7 +8,7 @@ import json
 import pandas as pd
 from datetime import datetime
 import re
-from .config_evals import get_evals
+from .config_evals import DEFAULT_TCM_EVALS, get_evals
 from .config_models import get_models
 
 
@@ -25,9 +25,15 @@ def main():
     )
     parser.add_argument(
         "--eval",
-        default="tcpe,tcpm_qa_multi_choice,kg_qa_fill_blank,kg_qa_single_choice,kg_qa_multi_choice,tcpm_qa_fill_blank,tcpm_qa_single_choice,ner_ancient,pres_diag,diag_choice,pres_choice,treatment_choice,ner_clinic,pres_diag_char_f1",
+        default=DEFAULT_TCM_EVALS,
         type=str,
         help="Select an eval by name. Also accepts a comma-separated list of evals.",
+    )
+    parser.add_argument(
+        "--split",
+        choices=("fullset", "hardset"),
+        default="fullset",
+        help="Select the LingLan data split.",
     )
     parser.add_argument(
         "--n-repeats",
@@ -65,8 +71,6 @@ def main():
 
     print(f"Running with args {args}")
 
-    print(f"loading grading sampler with {args.grading_model}")
-
     if not args.eval:
         raise ValueError("No eval specified")
 
@@ -81,7 +85,8 @@ def main():
                 'examples': args.examples,
                 'grading_model': args.grading_model,
                 'n_threads': args.n_threads,
-                'n_repeats': args.n_repeats
+                'n_repeats': args.n_repeats,
+                'split': args.split,
             })()
             evals[eval_name] = get_evals(temp_args)
         except Exception as e:
@@ -103,7 +108,9 @@ def main():
             tmp_path = f"{ROOT_PATH}/tmp"
 
             # 创建按eval_name和model_name分层的目录结构
-            eval_model_dir = f"{tmp_path}/{eval_name}/{model_name}"
+            dataset_split = getattr(eval_obj, "dataset_split", None)
+            result_root = f"{tmp_path}/{dataset_split}" if dataset_split else tmp_path
+            eval_model_dir = f"{result_root}/{eval_name}/{model_name}"
             os.makedirs(eval_model_dir, exist_ok=True)
 
             print(f"开始运行评估: {eval_name} -> {model_name}")
@@ -148,6 +155,7 @@ def main():
                     "htmls": result.htmls,
                     "convos": result.convos,
                     "metadata": result.metadata,
+                    "dataset_split": dataset_split,
                 }
                 f.write(json.dumps(result_dict, indent=2, ensure_ascii=False))
                 print(f"Writing all results to {full_result_filename}")

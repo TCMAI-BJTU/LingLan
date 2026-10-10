@@ -9,6 +9,7 @@ import numpy as np
 from ... import common
 from ...common import PRESCRIPTION_HTML_JINJA
 from ...types import Eval, EvalResult, SamplerBase, SingleEvalResult
+from .diagnostic_therapeutic_data import load_diagnostic_therapeutic_examples
 
 # 中医诊疗全流程提示模板
 MEDICAL_DIAGNOSIS_TEMPLATE = """
@@ -37,6 +38,7 @@ MEDICAL_DIAGNOSIS_TEMPLATE = """
 def parse_prescription(prescription_str: str) -> Dict[str, float]:
     """解析处方字符串，返回药名->剂量的字典
     严格按照数据集格式：药名: 剂量g, 药名: 剂量g, ...
+    同名药物重复出现时，保留首次解析出的剂量。
     """
     herb_doses = {}
     if not prescription_str:
@@ -57,7 +59,7 @@ def parse_prescription(prescription_str: str) -> Dict[str, float]:
             herb_name = match.group(1).strip()
             try:
                 dose = float(match.group(2))
-                herb_doses[herb_name] = dose
+                herb_doses.setdefault(herb_name, dose)
             except ValueError:
                 continue
 
@@ -393,11 +395,7 @@ class PresDigEval(Eval):
     """中医诊疗全流程评测类"""
 
     def __init__(self, data_path: str, num_examples: int | None = None, num_threads: int = 1):
-        examples = []
-        with open(data_path, 'r', encoding='utf-8') as f:
-            for line in f:
-                if line.strip():
-                    examples.append(json.loads(line))
+        examples = load_diagnostic_therapeutic_examples(data_path)
 
         if num_examples:
             examples = random.Random(0).sample(examples, min(num_examples, len(examples)))
@@ -522,7 +520,11 @@ class PresDigEval(Eval):
                     "dose_cosine": dose_cosine,
                     "overall_f1": overall_f1
                 }, 
-                convo=convo
+                convo=convo,
+                example_level_metadata={
+                    "id": row.get("id"),
+                    "source_ids": row.get("source_ids", {}),
+                },
             )
 
         results = common.map_with_progress(fn, self.examples, num_threads=self.num_threads)
