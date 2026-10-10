@@ -7,7 +7,7 @@
   <a href="http://tcmnlp.com"><b>Leaderboard</b></a>
 </p>
 
-<div align=center><img width = '250' src ="./assets/LingLan Logo.png"/></div>
+<div align="center"><img width="560" src="./assets/linglan_logo_horizontal.svg" alt="LingLan logo" /></div>
 
 ## Introduction
 
