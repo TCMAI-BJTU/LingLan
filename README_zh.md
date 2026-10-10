@@ -1,13 +1,15 @@
-# LingLan：面向中医领域的大语言模型统一评估基准
-
-[English](README.md)
-
 <p align="center">
-  <a href="https://arxiv.org/abs/2602.01779"><b>论文</b></a>&nbsp;|&nbsp;
-  <a href="http://tcmnlp.com"><b>排行榜</b></a>
+  <img width="440" src="./assets/linglan_logo_horizontal.svg" alt="灵兰标志" />
 </p>
 
-<div align="center"><img width="560" src="./assets/linglan_logo_horizontal.svg" alt="灵兰标志" /></div>
+<h2 align="center">面向中医领域的大语言模型统一评估基准</h2>
+
+<p align="center">
+  <a href="https://arxiv.org/abs/2602.01779"><b>论文</b></a>&nbsp;·&nbsp;
+  <a href="data/README_zh.md"><b>数据集</b></a>&nbsp;·&nbsp;
+  <a href="http://tcmnlp.com"><b>排行榜</b></a>&nbsp;·&nbsp;
+  <a href="README.md"><b>English</b></a>
+</p>
 
 ## 简介
 

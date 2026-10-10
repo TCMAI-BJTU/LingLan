@@ -1,13 +1,15 @@
-# LingLan: A Unified Benchmark for Evaluating Large Language Models in Traditional Chinese Medicine
-
-[中文说明](README_zh.md)
-
 <p align="center">
-  <a href="https://arxiv.org/abs/2602.01779"><b>Paper</b></a>&nbsp;|&nbsp;
-  <a href="http://tcmnlp.com"><b>Leaderboard</b></a>
+  <img width="440" src="./assets/linglan_logo_horizontal.svg" alt="LingLan logo" />
 </p>
 
-<div align="center"><img width="560" src="./assets/linglan_logo_horizontal.svg" alt="LingLan logo" /></div>
+<h2 align="center">A Unified Benchmark for Evaluating Large Language Models<br />in Traditional Chinese Medicine</h2>
+
+<p align="center">
+  <a href="https://arxiv.org/abs/2602.01779"><b>Paper</b></a>&nbsp;·&nbsp;
+  <a href="data/README.md"><b>Dataset</b></a>&nbsp;·&nbsp;
+  <a href="http://tcmnlp.com"><b>Leaderboard</b></a>&nbsp;·&nbsp;
+  <a href="README_zh.md"><b>中文</b></a>
+</p>
 
 ## Introduction
 
