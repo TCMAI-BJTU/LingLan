@@ -1,8 +1,8 @@
-# LingLan Traditional Chinese Medicine Benchmark Dataset
+# LingLanMedBench Traditional Chinese Medicine Benchmark Dataset
 
 [中文说明](README_zh.md)
 
-This directory contains the released LingLan inputs and reference labels in UTF-8 JSON Lines format: one JSON object per line. Every record includes `id`, `task`, and `answer`.
+This directory contains the released LingLanMedBench inputs and reference labels in UTF-8 JSON Lines format: one JSON object per line. Every record includes `id`, `task`, and `answer`.
 
 - [`fullset/`](fullset/): the full evaluation collection.
 - [`hardset/`](hardset/): the corresponding Hard subsets.
@@ -161,7 +161,7 @@ See the [evaluation guide](../simple-evals/README.md) and [entry-point configura
 
 ## Paper evaluation results
 
-Results for the paper's **19 models** are listed in the corresponding task directories: Full directories show Full results and Hard directories show Hard results. The source is Tables 2, 3, and Appendix Table 4 of [arXiv:2602.01779v1](https://arxiv.org/html/2602.01779v1) (2026-02-02).
+Results for the paper's **19 models** are listed in the corresponding task directories: Full directories show Full results and Hard directories show Hard results. The source is Tables 1, 2, and Supplementary Table S1 of [arXiv:2602.01779](https://arxiv.org/html/2602.01779).
 
 | Task group | Full results | Hard results |
 | --- | --- | --- |
@@ -175,4 +175,4 @@ Results for the paper's **19 models** are listed in the corresponding task direc
 
 ## Data license
 
-The LingLan dataset is released under the [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/). Please credit [LingLan, its authors, and the data source](https://github.com/TCMAI-BJTU/LingLan), and cite the [paper](https://arxiv.org/abs/2602.01779) when using it. When sharing the data, retain the license link and indicate any changes. See [LICENSE](LICENSE) for the full terms.
+The LingLanMedBench dataset is released under the [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/). Please credit [LingLanMedBench, its authors, and the data source](https://github.com/TCMAI-BJTU/LingLan), and cite the [paper](https://arxiv.org/abs/2602.01779) when using it. When sharing the data, retain the license link and indicate any changes. See [LICENSE](LICENSE) for the full terms.

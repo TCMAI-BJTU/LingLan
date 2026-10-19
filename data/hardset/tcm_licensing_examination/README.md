@@ -2,7 +2,7 @@
 
 [中文说明](README_zh.md) · [Dataset documentation](../../README.md#paper-evaluation-results)
 
-These tables show only **Hard** results for the tasks in this directory, covering **19 models** from Tables 2, 3, and Appendix Table 4 of [LingLan, arXiv:2602.01779v1](https://arxiv.org/html/2602.01779v1) (2026-02-02). Repeated reference models are merged into one row; names follow the paper.
+These tables show only **Hard** results for the tasks in this directory, covering **19 models** from Tables 1, 2, and Supplementary Table S1 of [LingLanMedBench, arXiv:2602.01779](https://arxiv.org/html/2602.01779). Repeated reference models are merged into one row; names follow the paper.
 
 Accuracy, precision, recall, and F1 are percentages; higher is better.
 

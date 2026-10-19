@@ -1,12 +1,12 @@
 <h2 align="center">
-  <img width="600" src="./assets/linglan_logo_horizontal.svg" alt="LingLan logo" /><br />
-  A Unified Benchmark for Evaluating Large Language Models<br />in Traditional Chinese Medicine
+  <img width="600" src="./assets/linglan_logo_horizontal.svg" alt="LingLanMedBench logo" /><br />
+  LingLanMedBench: A Unified Benchmark for Evaluating Large Language Models<br />in Traditional Chinese Medicine
 </h2>
 
 <p align="center">
   <a href="https://arxiv.org/abs/2602.01779"><img src="https://img.shields.io/badge/Paper-arXiv-B31B1B?style=plastic&amp;logo=arxiv&amp;logoColor=white" alt="Paper: arXiv" height="28" /></a>
   &nbsp;
-  <a href="https://www.tcmnlp.com/"><img src="https://img.shields.io/badge/Website-Leaderboard-2F9984?style=plastic" alt="Website: Leaderboard" height="28" /></a>
+  <a href="https://linglan.top/"><img src="https://img.shields.io/badge/Website-Leaderboard-2F9984?style=plastic" alt="Website: Leaderboard" height="28" /></a>
   &nbsp;
   <a href="https://huggingface.co/datasets/TCMLLM/LingLan"><img src="https://img.shields.io/badge/Dataset-Hugging%20Face-FFD21E?style=plastic&amp;logo=huggingface&amp;logoColor=black" alt="Dataset: Hugging Face" height="28" /></a>
   &nbsp;
@@ -32,7 +32,7 @@
 
 ## Introduction
 
-**LingLan** is an expert-curated benchmark for evaluating large language models across five domains of Traditional Chinese Medicine: licensing examination, fundamental knowledge, Chinese patent medicine knowledge, information extraction, and diagnostic and therapeutic decision-making. The last domain includes both diagnostic and therapeutic reasoning and single-choice decision recognition.
+**LingLanMedBench** is an expert-curated benchmark for evaluating large language models across five domains of Traditional Chinese Medicine: licensing examination, fundamental knowledge, Chinese patent medicine knowledge, information extraction, and diagnostic and therapeutic decision-making. The last domain includes both diagnostic and therapeutic reasoning and single-choice decision recognition.
 
 The release includes Full and Hard evaluation sets with reference labels in the `answer` field. See [Data Statistics](#data-statistics) for counts and the [data documentation](data/README.md) for schemas and file details.
 
@@ -40,26 +40,26 @@ The release includes Full and Hard evaluation sets with reference labels in the 
 <details>
 <summary><strong>Browse all sections</strong></summary>
 
-- [What is LingLan](#what-is-linglan)
+- [What is LingLanMedBench](#what-is-linglanmedbench)
 - [Data Statistics](#data-statistics)
 - [Evaluation Metrics](#evaluation-metrics)
 - [Download](#download)
 - [Quick Start](#quick-start)
 - [Leaderboards](#leaderboards)
-- [Cite LingLan](#cite-linglan)
+- [Cite LingLanMedBench](#cite-linglanmedbench)
 - [Data Sources](#data-sources)
 - [Data license](#data-license)
 - [Acknowledgements](#acknowledgements)
 
 </details>
 
-## What is LingLan
+## What is LingLanMedBench
 
 <p align="center">
   <img src="./assets/overview.png" alt="Overview" style="max-width:100%; height:auto;">
 </p>
 
-LingLan evaluates factual knowledge, structured information extraction, and clinical decision-making through single-choice, multiple-choice, fill-in-the-blank, and structured generation tasks. Diagnostic and therapeutic reasoning generates syndrome, treatment-method, and prescription outputs from a case; decision recognition presents the corresponding decisions as single-choice questions.
+LingLanMedBench evaluates factual knowledge, structured information extraction, and clinical decision-making through single-choice, multiple-choice, fill-in-the-blank, and structured generation tasks. Diagnostic and therapeutic reasoning generates syndrome, treatment-method, and prescription outputs from a case; decision recognition presents the corresponding decisions as single-choice questions.
 
 The six data directories group these tasks by use: the four knowledge/extraction groups and the two clinical task groups, diagnostic and therapeutic reasoning and decision recognition. They implement the five-domain taxonomy described above.
 
@@ -135,7 +135,7 @@ python3 -m simple-evals.simple_evals --model gpt-5 --eval clinical_record_entity
 python3 -m simple-evals.simple_evals --model gpt-5 --eval diagnostic_therapeutic_reasoning --split hardset --examples 10
 ```
 
-Omit `--examples` to evaluate the whole selected set. `--split` defaults to `fullset`; use `hardset` for LingLan-Hard. Reports are written to `simple-evals/tmp/<split>/<evaluation>/<model>/`.
+Omit `--examples` to evaluate the whole selected set. `--split` defaults to `fullset`; use `hardset` for LingLanMedBench-Hard. Reports are written to `simple-evals/tmp/<split>/<evaluation>/<model>/`.
 
 The evaluation framework is adapted from [OpenAI simple-evals](https://github.com/openai/simple-evals).
 
@@ -150,7 +150,9 @@ The evaluation framework is adapted from [OpenAI simple-evals](https://github.co
   <img src="./assets/model_performance.png" alt="Overall averages" style="max-width:100%; height:auto;">
 </p>
 
-Overall averages (%) on **Full** and **Hard**, using the baseline score snapshot recorded in this repository. Rows are sorted by Full score; Δ is Full minus Hard in percentage points.
+The figure summarizes performance by seven task types, with its overall score giving each task type equal weight, as in Figure 3 of the paper. The table below uses the paper’s separate average across metric rows.
+
+The table reports the **Average** scores (%) from Tables 1 and 2 of the [paper](https://arxiv.org/abs/2602.01779): the mean of 42 metric rows, excluding dosage mean absolute error, on **Full** and **Hard**. Rows are sorted by Full score; Δ is Full minus Hard in percentage points.
 
 | **Rank** | **Model**          | **Full** | **Hard** | **Δ (pp)** |
 | -------- | ------------------ | -------- | -------- | ---------- |
@@ -164,17 +166,17 @@ Overall averages (%) on **Full** and **Hard**, using the baseline score snapshot
 | 8 | Baichuan-M2-32B | 47.1 | 26.2 | 20.9 |
 | 9 | Qwen3-8B | 46.2 | 25.4 | 20.8 |
 | 10 | Qwen3-Next-80B-A3B | 44.9 | 22.6 | 22.3 |
-| 11 | GPT-5-mini | 43.9 | 23.3 | 20.6 |
+| 11 | GPT-5-mini | 43.8 | 23.3 | 20.5 |
 | 12 | Qwen3-4B | 43.8 | 24.5 | 19.3 |
-| 13 | GPT-OSS-120B | 40.7 | 23.1 | 17.6 |
+| 13 | GPT-OSS-120B | 40.7 | 23.0 | 17.7 |
 | 14 | GPT-OSS-20B | 36.1 | 20.8 | 15.3 |
 
-## Cite LingLan
+## Cite LingLanMedBench
 
 ```bibtex
 @misc{hua2026linglan,
-      title={LingLan: A Unified Benchmark for Evaluating Large Language Models in Traditional Chinese Medicine},
-      author={Rui Hua and Yu Wei and Zixin Shu and Kai Chang and Dengying Yan and Jianan Xia and Zeyu Liu and Hui Zhu and Shujie Song and Mingzhong Xiao and Xiaodong Li and Dongmei Jia and Zhuye Gao and Yanyan Meng and Naixuan Zhao and Yu Fu and Haibin Yu and Benman Yu and Yuanyuan Chen and Fei Dong and Zhizhou Meng and Pengcheng Yang and Songxue Zhao and Lijuan Pei and Yunhui Hu and Kan Ding and Jiayuan Duan and Wenmao Yin and Yang Gu and Runshun Zhang and Qiang Zhu and Jian Yu and Jiansheng Li and Baoyan Liu and Wenjia Wang and Xuezhong Zhou},
+      title={LingLanMedBench: A Unified Benchmark for Evaluating Large Language Models in Traditional Chinese Medicine},
+      author={Rui Hua and Yu Wei and Zixin Shu and Kai Chang and Dengying Yan and Jianan Xia and Hui Zhu and Xiaodong Li and Dongmei Jia and Zhuye Gao and Yanyan Meng and Haibin Yu and Fei Dong and Kan Ding and Runshun Zhang and Jian Yu and Jiansheng Li and Baoyan Liu and Wenjia Wang and Xuezhong Zhou},
       year={2026},
       eprint={2602.01779},
       archivePrefix={arXiv},
@@ -192,7 +194,7 @@ Overall averages (%) on **Full** and **Hard**, using the baseline score snapshot
 
 ## Data license
 
-The LingLan dataset is released under the [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/). Please credit [LingLan, its authors, and the data source](https://github.com/TCMAI-BJTU/LingLan), and cite the [paper](https://arxiv.org/abs/2602.01779) when using it. When sharing the data, retain the license link and indicate any changes. See [data/LICENSE](data/LICENSE) for the full terms.
+The LingLanMedBench dataset is released under the [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/). Please credit [LingLanMedBench, its authors, and the data source](https://github.com/TCMAI-BJTU/LingLan), and cite the [paper](https://arxiv.org/abs/2602.01779) when using it. When sharing the data, retain the license link and indicate any changes. See [data/LICENSE](data/LICENSE) for the full terms.
 
 
 ## Acknowledgements

@@ -1,12 +1,12 @@
 <h2 align="center">
   <img width="600" src="./assets/linglan_logo_horizontal.svg" alt="灵兰标志" /><br />
-  面向中医领域的大语言模型统一评估基准
+  LingLanMedBench（灵兰）：面向中医领域的大语言模型统一评估基准
 </h2>
 
 <p align="center">
   <a href="https://arxiv.org/abs/2602.01779"><img src="https://img.shields.io/badge/%E8%AE%BA%E6%96%87-arXiv-B31B1B?style=plastic&amp;logo=arxiv&amp;logoColor=white" alt="论文: arXiv" height="28" /></a>
   &nbsp;
-  <a href="https://www.tcmnlp.com/"><img src="https://img.shields.io/badge/%E7%BD%91%E7%AB%99-%E6%8E%92%E8%A1%8C%E6%A6%9C-2F9984?style=plastic" alt="网站: 排行榜" height="28" /></a>
+  <a href="https://linglan.top/"><img src="https://img.shields.io/badge/%E7%BD%91%E7%AB%99-%E6%8E%92%E8%A1%8C%E6%A6%9C-2F9984?style=plastic" alt="网站: 排行榜" height="28" /></a>
   &nbsp;
   <a href="https://huggingface.co/datasets/TCMLLM/LingLan"><img src="https://img.shields.io/badge/%E6%95%B0%E6%8D%AE%E9%9B%86-Hugging%20Face-FFD21E?style=plastic&amp;logo=huggingface&amp;logoColor=black" alt="数据集: Hugging Face" height="28" /></a>
   &nbsp;
@@ -32,7 +32,7 @@
 
 ## 简介
 
-**LingLan** 是由专家整理构建的基准，用于评估大语言模型在中医五个领域的能力：执业资格考试、基础知识、中成药知识、信息抽取，以及诊断与治疗决策。最后一个领域同时包含诊疗推理和单选形式的决策识别。
+**LingLanMedBench** 是由专家整理构建的基准，用于评估大语言模型在中医五个领域的能力：执业资格考试、基础知识、中成药知识、信息抽取，以及诊断与治疗决策。最后一个领域同时包含诊疗推理和单选形式的决策识别。
 
 本版本提供 Full 和 Hard 评估集合，标准标签保存在 `answer` 字段中。样本数量见[数据统计](#数据统计)，字段结构与文件详情见[数据文档](data/README_zh.md)。
 
@@ -46,7 +46,7 @@
 - [下载](#下载)
 - [快速开始](#快速开始)
 - [排行榜](#排行榜)
-- [引用 LingLan](#引用-linglan)
+- [引用 LingLanMedBench](#引用-linglanmedbench)
 - [数据来源](#数据来源)
 - [数据许可](#数据许可)
 - [致谢](#致谢)
@@ -59,7 +59,7 @@
   <img src="./assets/overview.png" alt="概览" style="max-width:100%; height:auto;">
 </p>
 
-LingLan 通过单选、多选、填空和结构化生成任务，评估事实知识、结构化信息抽取及临床决策能力。诊疗推理根据病例生成辨证、治法和处方结果；决策识别则将相应的决策呈现为单选题。
+LingLanMedBench 通过单选、多选、填空和结构化生成任务，评估事实知识、结构化信息抽取及临床决策能力。诊疗推理根据病例生成辨证、治法和处方结果；决策识别则将相应的决策呈现为单选题。
 
 六个数据目录按照用途对这些任务进行分组：四个知识或抽取任务组，以及诊疗推理和决策识别两个临床任务组。它们对应上述五个领域的分类体系。
 
@@ -135,7 +135,7 @@ python3 -m simple-evals.simple_evals --model gpt-5 --eval clinical_record_entity
 python3 -m simple-evals.simple_evals --model gpt-5 --eval diagnostic_therapeutic_reasoning --split hardset --examples 10
 ```
 
-省略 `--examples` 即可评估所选集合的全部样本。`--split` 默认为 `fullset`；评估 LingLan-Hard 时请使用 `hardset`。报告保存至 `simple-evals/tmp/<split>/<evaluation>/<model>/`。
+省略 `--examples` 即可评估所选集合的全部样本。`--split` 默认为 `fullset`；评估 LingLanMedBench-Hard 时请使用 `hardset`。报告保存至 `simple-evals/tmp/<split>/<evaluation>/<model>/`。
 
 评估框架改编自 [OpenAI simple-evals](https://github.com/openai/simple-evals)。
 
@@ -150,7 +150,9 @@ python3 -m simple-evals.simple_evals --model gpt-5 --eval diagnostic_therapeutic
   <img src="./assets/model_performance.png" alt="总体平均分" style="max-width:100%; height:auto;">
 </p>
 
-以下为 **Full** 和 **Hard** 上的总体平均分（%），采用本仓库记录的基线分数快照。各行按 Full 分数排序；Δ 为 Full 减去 Hard 的差值，单位为百分点。
+上图按七类任务汇总表现，其中总体分数对七类任务等权平均，与论文图 3 的统计方式一致。下表采用论文中另行报告的指标行平均分。
+
+下表为[论文](https://arxiv.org/abs/2602.01779)表 1、表 2 中 **Full** 和 **Hard** 的 **Average** 分数（%）：对 42 个指标行取平均，不包含剂量平均绝对误差。各行按 Full 分数排序；Δ 为 Full 减去 Hard 的差值，单位为百分点。
 
 | **排名** | **模型**          | **Full** | **Hard** | **Δ（百分点）** |
 | -------- | ------------------ | -------- | -------- | ---------- |
@@ -164,17 +166,17 @@ python3 -m simple-evals.simple_evals --model gpt-5 --eval diagnostic_therapeutic
 | 8 | Baichuan-M2-32B | 47.1 | 26.2 | 20.9 |
 | 9 | Qwen3-8B | 46.2 | 25.4 | 20.8 |
 | 10 | Qwen3-Next-80B-A3B | 44.9 | 22.6 | 22.3 |
-| 11 | GPT-5-mini | 43.9 | 23.3 | 20.6 |
+| 11 | GPT-5-mini | 43.8 | 23.3 | 20.5 |
 | 12 | Qwen3-4B | 43.8 | 24.5 | 19.3 |
-| 13 | GPT-OSS-120B | 40.7 | 23.1 | 17.6 |
+| 13 | GPT-OSS-120B | 40.7 | 23.0 | 17.7 |
 | 14 | GPT-OSS-20B | 36.1 | 20.8 | 15.3 |
 
-## 引用 LingLan
+## 引用 LingLanMedBench
 
 ```bibtex
 @misc{hua2026linglan,
-      title={LingLan: A Unified Benchmark for Evaluating Large Language Models in Traditional Chinese Medicine},
-      author={Rui Hua and Yu Wei and Zixin Shu and Kai Chang and Dengying Yan and Jianan Xia and Zeyu Liu and Hui Zhu and Shujie Song and Mingzhong Xiao and Xiaodong Li and Dongmei Jia and Zhuye Gao and Yanyan Meng and Naixuan Zhao and Yu Fu and Haibin Yu and Benman Yu and Yuanyuan Chen and Fei Dong and Zhizhou Meng and Pengcheng Yang and Songxue Zhao and Lijuan Pei and Yunhui Hu and Kan Ding and Jiayuan Duan and Wenmao Yin and Yang Gu and Runshun Zhang and Qiang Zhu and Jian Yu and Jiansheng Li and Baoyan Liu and Wenjia Wang and Xuezhong Zhou},
+      title={LingLanMedBench: A Unified Benchmark for Evaluating Large Language Models in Traditional Chinese Medicine},
+      author={Rui Hua and Yu Wei and Zixin Shu and Kai Chang and Dengying Yan and Jianan Xia and Hui Zhu and Xiaodong Li and Dongmei Jia and Zhuye Gao and Yanyan Meng and Haibin Yu and Fei Dong and Kan Ding and Runshun Zhang and Jian Yu and Jiansheng Li and Baoyan Liu and Wenjia Wang and Xuezhong Zhou},
       year={2026},
       eprint={2602.01779},
       archivePrefix={arXiv},
@@ -192,7 +194,7 @@ python3 -m simple-evals.simple_evals --model gpt-5 --eval diagnostic_therapeutic
 
 ## 数据许可
 
-LingLan 数据集采用 [知识共享署名 4.0 国际许可](https://creativecommons.org/licenses/by/4.0/deed.zh-hans)。使用时请注明 [LingLan 及其作者和数据来源](https://github.com/TCMAI-BJTU/LingLan)，并引用[相关论文](https://arxiv.org/abs/2602.01779)。分享数据时，请保留许可链接并注明所作修改。许可全文见 [data/LICENSE](data/LICENSE)。
+LingLanMedBench 数据集采用 [知识共享署名 4.0 国际许可](https://creativecommons.org/licenses/by/4.0/deed.zh-hans)。使用时请注明 [LingLanMedBench 及其作者和数据来源](https://github.com/TCMAI-BJTU/LingLan)，并引用[相关论文](https://arxiv.org/abs/2602.01779)。分享数据时，请保留许可链接并注明所作修改。许可全文见 [data/LICENSE](data/LICENSE)。
 
 
 ## 致谢

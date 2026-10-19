@@ -1,8 +1,8 @@
-# LingLan 中医评测基准数据集
+# LingLanMedBench 中医评测基准数据集
 
 [English](README.md)
 
-本目录包含已发布的 LingLan 输入数据和标准标签，采用 UTF-8 编码的 JSON Lines 格式，每行一个 JSON 对象。每条记录均包含 `id`、`task` 和 `answer`。
+本目录包含已发布的 LingLanMedBench 输入数据和标准标签，采用 UTF-8 编码的 JSON Lines 格式，每行一个 JSON 对象。每条记录均包含 `id`、`task` 和 `answer`。
 
 - [`fullset/`](fullset/)：完整的评估数据集合。
 - [`hardset/`](hardset/)：对应的 Hard 子集。
@@ -161,7 +161,7 @@ Hard 记录选自 Full。每条 Hard 记录与其在 Full 中对应的记录具�
 
 ## 论文评估结果
 
-论文中的 **19 个模型**的成绩按具体任务目录分别列出：Full 目录展示 Full 成绩，Hard 目录展示 Hard 成绩。来源为 [arXiv:2602.01779v1](https://arxiv.org/html/2602.01779v1)（2026-02-02）的表 2、表 3 和附录表 4。
+论文中的 **19 个模型**的成绩按具体任务目录分别列出：Full 目录展示 Full 成绩，Hard 目录展示 Hard 成绩。来源为 [arXiv:2602.01779](https://arxiv.org/html/2602.01779)的表 1、表 2 和补充表 S1。
 
 | 任务类别 | Full 成绩 | Hard 成绩 |
 | --- | --- | --- |
@@ -175,4 +175,4 @@ Hard 记录选自 Full。每条 Hard 记录与其在 Full 中对应的记录具�
 
 ## 数据许可
 
-LingLan 数据集采用 [知识共享署名 4.0 国际许可](https://creativecommons.org/licenses/by/4.0/deed.zh-hans)。使用时请注明 [LingLan 及其作者和数据来源](https://github.com/TCMAI-BJTU/LingLan)，并引用[相关论文](https://arxiv.org/abs/2602.01779)。分享数据时，请保留许可链接并注明所作修改。许可全文见 [LICENSE](LICENSE)。
+LingLanMedBench 数据集采用 [知识共享署名 4.0 国际许可](https://creativecommons.org/licenses/by/4.0/deed.zh-hans)。使用时请注明 [LingLanMedBench 及其作者和数据来源](https://github.com/TCMAI-BJTU/LingLan)，并引用[相关论文](https://arxiv.org/abs/2602.01779)。分享数据时，请保留许可链接并注明所作修改。许可全文见 [LICENSE](LICENSE)。
