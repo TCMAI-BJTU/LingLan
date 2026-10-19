@@ -1,6 +1,6 @@
 <h2 align="center">
   <img width="600" src="./assets/linglan_logo_horizontal.svg" alt="LingLanMedBench logo" /><br />
-  LingLanMedBench: A Unified Benchmark for Evaluating Large Language Models<br />in Traditional Chinese Medicine
+  LingLanMedBench: A Unified Benchmark for Evaluating Large Language Models in Traditional Chinese Medicine
 </h2>
 
 <p align="center">
