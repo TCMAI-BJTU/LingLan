@@ -37,7 +37,7 @@
 The release includes Full and Hard evaluation sets with reference labels in the `answer` field. See [Data Statistics](#data-statistics) for counts and the [data documentation](data/README.md) for schemas and file details.
 
 
-<details>
+<details open>
 <summary><strong>Browse all sections</strong></summary>
 
 - [What is LingLanMedBench](#what-is-linglanmedbench)

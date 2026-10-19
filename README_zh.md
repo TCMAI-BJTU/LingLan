@@ -37,7 +37,7 @@
 本版本提供 Full 和 Hard 评估集合，标准标签保存在 `answer` 字段中。样本数量见[数据统计](#数据统计)，字段结构与文件详情见[数据文档](data/README_zh.md)。
 
 
-<details>
+<details open>
 <summary><strong>浏览全部章节</strong></summary>
 
 - [什么是灵兰](#什么是灵兰)
